@@ -34,7 +34,7 @@
 
     Private Sub Aceptar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Aceptar.Click
 
-        If operacion_ <> "Aceptar" Then
+        If operacion_ <> "Agregar" Then
 
 
             MiRubro.Id = CInt(TextBox1.Text)
@@ -46,7 +46,7 @@
 
         Select Case operacion_
 
-            Case "Aceptar"
+            Case "Agregar"
                 RubrosList.InsertarRubro(MiRubro)
 
             Case "Eliminar"

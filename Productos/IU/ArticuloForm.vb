@@ -1,8 +1,21 @@
 ﻿Public Class ArticuloForm
 
-
+    Dim IdRubro_ As Integer
     Dim operacion_ As String
     Dim MiArticulo As New ArticuloClass
+    Public Property IdRubro() As Integer
+
+        Get
+            Return IdRubro_
+
+        End Get
+        Set(value As Integer)
+
+            IdRubro_ = value
+        End Set
+    End Property
+
+
 
     Public Property operacion() As String
         Get
@@ -35,7 +48,7 @@
 
     Private Sub Aceptar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Aceptar.Click
 
-        If operacion_ <> "Aceptar" Then
+        If operacion_ <> "Agregar" Then
 
 
             MiArticulo.Id = CInt(TextBox1.Text)
@@ -44,17 +57,15 @@
 
         MiArticulo.Descripcion = TextBox2.Text
 
-        MiArticulo.IdRubro = CInt(TextBox3.Text)
+        MiArticulo.IdRubro = CInt(ComboBox1.Text)
 
         Select Case operacion_
 
-            Case "Aceptar"
+            Case "Agregar"
                 ArticulosList.InsertarArticulo(MiArticulo)
 
             Case "Eliminar"
-                'ArticulosList.EliminarArticulo(MiArticulo)
-                'ArticulosList.TraerArticulos(MiArticulo)
-                'ArticulosList.EliminarRubro(MiArticulo)
+                ArticulosList.EliminarArticulo(MiArticulo)
 
             Case "Modificar"
 

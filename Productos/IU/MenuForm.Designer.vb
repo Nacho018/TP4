@@ -35,11 +35,13 @@ Partial Class MenuForm
         '
         'Panel1
         '
+        Me.Panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.Panel1.BackColor = System.Drawing.Color.YellowGreen
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Location = New System.Drawing.Point(-3, -5)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(791, 89)
+        Me.Panel1.Size = New System.Drawing.Size(1024, 89)
         Me.Panel1.TabIndex = 0
         '
         'Label1
@@ -56,13 +58,12 @@ Partial Class MenuForm
         '
         Me.ToolStrip2.AutoSize = False
         Me.ToolStrip2.BackColor = System.Drawing.SystemColors.Highlight
-        Me.ToolStrip2.Dock = System.Windows.Forms.DockStyle.None
         Me.ToolStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
         Me.ToolStrip2.ImageScalingSize = New System.Drawing.Size(40, 40)
         Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RubrosButton, Me.ArticulosButton, Me.SalirButton})
-        Me.ToolStrip2.Location = New System.Drawing.Point(0, 77)
+        Me.ToolStrip2.Location = New System.Drawing.Point(0, 89)
         Me.ToolStrip2.Name = "ToolStrip2"
-        Me.ToolStrip2.Size = New System.Drawing.Size(788, 53)
+        Me.ToolStrip2.Size = New System.Drawing.Size(1024, 53)
         Me.ToolStrip2.TabIndex = 2
         Me.ToolStrip2.Text = "ToolStrip2"
         '
@@ -99,12 +100,14 @@ Partial Class MenuForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.ClientSize = New System.Drawing.Size(787, 329)
+        Me.ClientSize = New System.Drawing.Size(1024, 562)
         Me.Controls.Add(Me.ToolStrip2)
         Me.Controls.Add(Me.Panel1)
+        Me.IsMdiContainer = True
+        Me.MaximizeBox = False
         Me.Name = "MenuForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "MenuForm"
+        Me.Text = "Menu Principal"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ToolStrip2.ResumeLayout(False)

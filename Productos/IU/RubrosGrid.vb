@@ -2,7 +2,7 @@
 
 
 
-    Private Sub Agregar_Click(sender As Object, e As EventArgs)
+    Private Sub Agregar_Click(sender As Object, e As EventArgs) Handles Agregar.Click
 
         RubroForm.operacion = "Agregar"
         RubroForm.Text = "Agregar"
@@ -12,7 +12,7 @@
 
     End Sub
 
-    Private Sub Eliminar_Click(sender As Object, e As EventArgs)
+    Private Sub Eliminar_Click(sender As Object, e As EventArgs) Handles Eliminar.Click
 
         'Determina si existen filas en el DataGridView
         If DataGridView1.Rows.Count = 0 Then
@@ -21,7 +21,7 @@
         End If
 
         RubroForm.operacion = "Eliminar"
-        RubroForm.Text = "Eliminar Turno"
+        RubroForm.Text = "Eliminar Rubro"
         'RubroForm.TituloLabel.Text = "Eliminar Turno"
 
         'Número de fila seleccionado en el datagridview
@@ -32,7 +32,7 @@
 
     End Sub
 
-    Private Sub Modificar_Click(sender As Object, e As EventArgs)
+    Private Sub Modificar_Click(sender As Object, e As EventArgs) Handles Modificar.Click
 
         'Determina si existen filas en el DataGridView
         If DataGridView1.Rows.Count = 0 Then
@@ -41,7 +41,7 @@
         End If
 
         RubroForm.operacion = "Modificar"
-        RubroForm.Text = "Modificar Turno"
+        RubroForm.Text = "Modificar Rubro"
         ' RubroForm.TituloLabel.Text = "Modificar Turno"
 
         LlenarForm()
@@ -53,7 +53,7 @@
 
     End Sub
 
-    Private Sub Salir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub Salir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Salir.Click
         MenuForm.Label1.Text = "Productos"
         MenuForm.ToolStrip2.Enabled = True
 
@@ -66,11 +66,7 @@
 
 
         MenuForm.Label1.Text = "Productos"
-        'RubrosCollectionBindingSource.DataSource = RubrosList.TraerRubros
-        'RubroCombo.ComboBox.DataSource = RubroList.TraerRubro
-
-        'Lleno el datagrid con RubrosList.
-        ' DataGridView1.DataSource = RubrosList.TraerRubros
+        RubrosCollectionBindingSource.DataSource = RubrosList.TraerRubros
 
         'Si la cantidad de filas es mayor a cero, entonces selecciono la primer fila.
         If DataGridView1.Rows.Count > 0 Then
@@ -98,6 +94,8 @@
         Me.Dispose()
 
     End Sub
+
+
 
 End Class
 

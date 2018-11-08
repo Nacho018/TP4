@@ -2,7 +2,7 @@
 
 
 
-    Private Sub Agregar_Click(sender As Object, e As EventArgs)
+    Private Sub Agregar_Click(sender As Object, e As EventArgs) Handles Agregar.Click
 
         ArticuloForm.operacion = "Agregar"
         ArticuloForm.Text = "Agregar"
@@ -14,7 +14,7 @@
 
     End Sub
 
-    Private Sub Eliminar_Click(sender As Object, e As EventArgs)
+    Private Sub Eliminar_Click(sender As Object, e As EventArgs) Handles Eliminar.Click
 
         'Determina si existen filas en el DataGridView
         If DataGridView1.Rows.Count = 0 Then
@@ -36,7 +36,7 @@
 
     End Sub
 
-    Private Sub Modificar_Click(sender As Object, e As EventArgs)
+    Private Sub Modificar_Click(sender As Object, e As EventArgs) Handles Modifcar.Click
 
         'Determina si existen filas en el DataGridView
         If DataGridView1.Rows.Count = 0 Then
@@ -60,7 +60,7 @@
 
     End Sub
 
-    Private Sub Salir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub Salir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Salir.Click
         MenuForm.Label1.Text = "Productos"
         MenuForm.ToolStrip2.Enabled = True
 
@@ -71,11 +71,15 @@
 
     Private Sub ArticulosGrid_Load(sender As Object, e As EventArgs) Handles Me.Load
 
-
-
         MenuForm.Label1.Text = "Productos"
-        'ArticulosCollectionBindingSource.DataSource = ArticulosList.TraerArticulos
+
         ArticulosCombo.ComboBox.DataSource = RubrosList.TraerRubros
+
+        ArticulosCombo.ComboBox.DisplayMember = "Descripcion"
+        ArticulosCombo.ComboBox.ValueMember = "Id"
+
+        ArticulosCollectionBindingSource.DataSource = ArticulosList.TraerArticulos
+
 
         'Lleno el datagrid con turnosList.
         ' DataGridView1.DataSource = turnosList.TraerTurnos
@@ -94,7 +98,7 @@
 
         ArticuloForm.TextBox1.Text = ArticulosList.Item(fila).Id
         ArticuloForm.TextBox2.Text = ArticulosList.Item(fila).Descripcion
-        ArticuloForm.TextBox3.Text = ArticulosList.Item(fila).IdRubro
+        ArticuloForm.ComboBox1.Text = ArticulosList.Item(fila).IdRubro
 
     End Sub
 
@@ -107,4 +111,10 @@
 
     End Sub
 
+    Private Sub FiltroRubros_Click(sender As Object, e As EventArgs) Handles FiltroRubros.Click
+
+        ArticulosCollectionBindingSource.DataSource = ArticulosList.TraerArticulos(ArticulosCombo.ComboBox.SelectedValue)
+
+
+    End Sub
 End Class

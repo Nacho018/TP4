@@ -26,7 +26,7 @@ Partial Class ArticulosGrid
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ArticulosGrid))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.Rubros = New System.Windows.Forms.ToolStripButton()
+        Me.FiltroRubros = New System.Windows.Forms.ToolStripButton()
         Me.ArticulosCombo = New System.Windows.Forms.ToolStripComboBox()
         Me.Agregar = New System.Windows.Forms.ToolStripButton()
         Me.Modifcar = New System.Windows.Forms.ToolStripButton()
@@ -50,32 +50,33 @@ Partial Class ArticulosGrid
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.DescripcionDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.ArticulosCollectionBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(-1, 33)
+        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataGridView1.Location = New System.Drawing.Point(0, 38)
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(750, 343)
+        Me.DataGridView1.Size = New System.Drawing.Size(749, 382)
         Me.DataGridView1.TabIndex = 0
         '
         'ToolStrip1
         '
         Me.ToolStrip1.BackColor = System.Drawing.Color.YellowGreen
         Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Rubros, Me.ArticulosCombo, Me.Agregar, Me.Modifcar, Me.Eliminar, Me.Salir})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FiltroRubros, Me.ArticulosCombo, Me.Agregar, Me.Modifcar, Me.Eliminar, Me.Salir})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(749, 38)
         Me.ToolStrip1.TabIndex = 5
         Me.ToolStrip1.Text = "ToolStrip1"
         '
-        'Rubros
+        'FiltroRubros
         '
-        Me.Rubros.Image = CType(resources.GetObject("Rubros.Image"), System.Drawing.Image)
-        Me.Rubros.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.Rubros.Name = "Rubros"
-        Me.Rubros.Size = New System.Drawing.Size(64, 35)
-        Me.Rubros.Text = "Rubros"
+        Me.FiltroRubros.Image = CType(resources.GetObject("FiltroRubros.Image"), System.Drawing.Image)
+        Me.FiltroRubros.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.FiltroRubros.Name = "FiltroRubros"
+        Me.FiltroRubros.Size = New System.Drawing.Size(87, 35)
+        Me.FiltroRubros.Text = "Elejir Rubro"
         '
         'ArticulosCombo
         '
@@ -137,14 +138,15 @@ Partial Class ArticulosGrid
         Me.DescripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion"
         Me.DescripcionDataGridViewTextBoxColumn.Name = "DescripcionDataGridViewTextBoxColumn"
         Me.DescripcionDataGridViewTextBoxColumn.ReadOnly = True
+        Me.DescripcionDataGridViewTextBoxColumn.Width = 300
         '
         'ArticulosGrid
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(749, 420)
-        Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.ToolStrip1)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "ArticulosGrid"
@@ -162,13 +164,13 @@ Partial Class ArticulosGrid
 
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents ToolStrip1 As ToolStrip
-    Friend WithEvents Rubros As ToolStripButton
+    Friend WithEvents FiltroRubros As ToolStripButton
     Friend WithEvents ArticulosCombo As ToolStripComboBox
     Friend WithEvents Agregar As ToolStripButton
     Friend WithEvents Modifcar As ToolStripButton
     Friend WithEvents Eliminar As ToolStripButton
     Friend WithEvents Salir As ToolStripButton
+    Friend WithEvents ArticulosCollectionBindingSource As BindingSource
     Friend WithEvents IdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DescripcionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ArticulosCollectionBindingSource As BindingSource
 End Class

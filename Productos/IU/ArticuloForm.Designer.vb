@@ -29,7 +29,7 @@ Partial Class ArticuloForm
         Me.Aceptar = New System.Windows.Forms.Button()
         Me.Cancelar = New System.Windows.Forms.Button()
         Me.IdRubros = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'Id
@@ -92,19 +92,20 @@ Partial Class ArticuloForm
         Me.IdRubros.TabIndex = 6
         Me.IdRubros.Text = "IdRubros"
         '
-        'TextBox3
+        'ComboBox1
         '
-        Me.TextBox3.Location = New System.Drawing.Point(199, 115)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(106, 20)
-        Me.TextBox3.TabIndex = 7
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(199, 119)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(106, 21)
+        Me.ComboBox1.TabIndex = 7
         '
         'ArticuloForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(543, 261)
-        Me.Controls.Add(Me.TextBox3)
+        Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.IdRubros)
         Me.Controls.Add(Me.Cancelar)
         Me.Controls.Add(Me.Aceptar)
@@ -129,5 +130,5 @@ Partial Class ArticuloForm
     Friend WithEvents Aceptar As Button
     Friend WithEvents Cancelar As Button
     Friend WithEvents IdRubros As Label
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents ComboBox1 As ComboBox
 End Class

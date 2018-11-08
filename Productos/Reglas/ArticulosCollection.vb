@@ -47,7 +47,7 @@ Public Class ArticulosCollection
 
             MiArticulo.Id = CInt(dr("Id"))
             MiArticulo.Descripcion = dr("Descripcion")
-            MiArticulo.IdRubro = CInt("IdRubro")
+            'MiArticulo.IdRubro = CInt("IdRubro")
 
             Me.Add(MiArticulo)
         Next

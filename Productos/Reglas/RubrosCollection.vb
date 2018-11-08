@@ -88,7 +88,7 @@ Public Class RubrosCollection
 
         ' Instancio en el objeto BaseDatosClass para accede a la base productos
         Dim objBaseDatos As New BaseDatosClass
-        objBaseDatos.objTabla = "Rubro"
+        objBaseDatos.objTabla = "Rubros"
 
         'ejecuta el método base eliminar 
         Dim resultado As Boolean
