@@ -80,8 +80,8 @@
         'Número de fila seleccionado en el datagridview
         Dim fila As Integer = DataGridView1.CurrentRow.Index
 
-        RubroForm.TextBox1.Text = RubrosList.Item(fila).Id
-        RubroForm.TextBox2.Text = RubrosList.Item(fila).Descripcion
+        RubroForm.IdTextBox1.Text = RubrosList.Item(fila).Id
+        RubroForm.DescripcionTextBox2.Text = RubrosList.Item(fila).Descripcion
 
 
     End Sub

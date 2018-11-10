@@ -6,11 +6,13 @@
 
         ArticuloForm.operacion = "Agregar"
         ArticuloForm.Text = "Agregar"
-        ArticuloForm.indice = DataGridView1.CurrentRow.Index
+        ArticuloForm.IdRubro = ArticulosCombo.ComboBox.SelectedValue
+
+        'ArticuloForm.indice = DataGridView1.CurrentRow.Index
 
         'ArticuloForm.TituloLabel.Text = "Agregar"
 
-        RubroForm.Show()
+        ArticuloForm.Show()
 
     End Sub
 
@@ -26,13 +28,13 @@
         ArticuloForm.Text = "Eliminar "
         ArticuloForm.indice = DataGridView1.CurrentRow.Index
 
-        'ArticuloForm.TituloLabel.Text = "Eliminar "
-
-        'Número de fila seleccionado en el datagridview
-        RubroForm.indice = DataGridView1.CurrentRow.Index
 
         LlenarForm()
         ArticuloForm.Show()
+        Dim fila As Integer = DataGridView1.CurrentRow.Index
+
+        DataGridView1.Rows.Item(fila).Selected = False
+        DataGridView1.Rows.Item(fila).Selected = True
 
     End Sub
 
@@ -49,14 +51,16 @@
         ArticuloForm.indice = DataGridView1.CurrentRow.Index
 
 
-        'ArticuloForm.TituloLabel.Text = "Modificar "
-
         LlenarForm()
         ArticuloForm.Show()
+        'ArticuloForm.Label.Text = "Modificar "
 
+
+        Dim fila As Integer = DataGridView1.CurrentRow.Index
         'Selecciono nuevamente la fila para que refresque el contenido, sino no muestra la modificación.
         DataGridView1.Rows(DataGridView1.CurrentRow.Index).Selected = False
         DataGridView1.Rows(DataGridView1.CurrentRow.Index).Selected = True
+
 
     End Sub
 
@@ -96,8 +100,8 @@
         'Número de fila seleccionado en el datagridview
         Dim fila As Integer = DataGridView1.CurrentRow.Index
 
-        ArticuloForm.TextBox1.Text = ArticulosList.Item(fila).Id
-        ArticuloForm.TextBox2.Text = ArticulosList.Item(fila).Descripcion
+        ArticuloForm.ArticuloTextBox1.Text = ArticulosList.Item(fila).Id
+        ArticuloForm.ArticuloTextBox2.Text = ArticulosList.Item(fila).Descripcion
         ArticuloForm.ComboBox1.Text = ArticulosList.Item(fila).IdRubro
 
     End Sub

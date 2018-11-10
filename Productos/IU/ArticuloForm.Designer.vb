@@ -24,8 +24,8 @@ Partial Class ArticuloForm
     Private Sub InitializeComponent()
         Me.Id = New System.Windows.Forms.Label()
         Me.Descripcion = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.ArticuloTextBox1 = New System.Windows.Forms.TextBox()
+        Me.ArticuloTextBox2 = New System.Windows.Forms.TextBox()
         Me.Aceptar = New System.Windows.Forms.Button()
         Me.Cancelar = New System.Windows.Forms.Button()
         Me.IdRubros = New System.Windows.Forms.Label()
@@ -50,20 +50,20 @@ Partial Class ArticuloForm
         Me.Descripcion.TabIndex = 1
         Me.Descripcion.Text = "Descripcion"
         '
-        'TextBox1
+        'ArticuloTextBox1
         '
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(199, 41)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(106, 20)
-        Me.TextBox1.TabIndex = 2
+        Me.ArticuloTextBox1.Enabled = False
+        Me.ArticuloTextBox1.Location = New System.Drawing.Point(199, 41)
+        Me.ArticuloTextBox1.Name = "ArticuloTextBox1"
+        Me.ArticuloTextBox1.Size = New System.Drawing.Size(106, 20)
+        Me.ArticuloTextBox1.TabIndex = 2
         '
-        'TextBox2
+        'ArticuloTextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(199, 78)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(106, 20)
-        Me.TextBox2.TabIndex = 3
+        Me.ArticuloTextBox2.Location = New System.Drawing.Point(199, 78)
+        Me.ArticuloTextBox2.Name = "ArticuloTextBox2"
+        Me.ArticuloTextBox2.Size = New System.Drawing.Size(106, 20)
+        Me.ArticuloTextBox2.TabIndex = 3
         '
         'Aceptar
         '
@@ -109,8 +109,8 @@ Partial Class ArticuloForm
         Me.Controls.Add(Me.IdRubros)
         Me.Controls.Add(Me.Cancelar)
         Me.Controls.Add(Me.Aceptar)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.ArticuloTextBox2)
+        Me.Controls.Add(Me.ArticuloTextBox1)
         Me.Controls.Add(Me.Descripcion)
         Me.Controls.Add(Me.Id)
         Me.MaximizeBox = False
@@ -125,8 +125,8 @@ Partial Class ArticuloForm
 
     Friend WithEvents Id As Label
     Friend WithEvents Descripcion As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents ArticuloTextBox1 As TextBox
+    Friend WithEvents ArticuloTextBox2 As TextBox
     Friend WithEvents Aceptar As Button
     Friend WithEvents Cancelar As Button
     Friend WithEvents IdRubros As Label

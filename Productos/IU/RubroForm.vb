@@ -37,11 +37,11 @@
         If operacion_ <> "Agregar" Then
 
 
-            MiRubro.Id = CInt(TextBox1.Text)
+            MiRubro.Id = CInt(IdTextBox1.Text)
 
         End If
 
-        MiRubro.Descripcion = TextBox2.Text
+        MiRubro.Descripcion = DescripcionTextBox2.Text
 
 
         Select Case operacion_
@@ -65,7 +65,7 @@
 
     Private Sub RubroForm_Load(sender As Object, e As EventArgs) Handles Me.Load
 
-        TextBox2.Focus()
+        DescripcionTextBox2.Focus()
     End Sub
 
 End Class

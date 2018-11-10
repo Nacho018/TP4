@@ -29,11 +29,11 @@
 
     Dim indice_ As Byte
 
-    Public Property indice() As String
+    Public Property indice() As Byte
         Get
             Return indice_
         End Get
-        Set(ByVal value As String)
+        Set(ByVal value As Byte)
             indice_ = value
         End Set
 
@@ -51,18 +51,22 @@
         If operacion_ <> "Agregar" Then
 
 
-            MiArticulo.Id = CInt(TextBox1.Text)
+            MiArticulo.Id = CInt(ArticuloTextBox1.Text)
 
         End If
 
-        MiArticulo.Descripcion = TextBox2.Text
+        MiArticulo.Descripcion = ArticuloTextBox2.Text
 
-        MiArticulo.IdRubro = CInt(ComboBox1.Text)
+        MiArticulo.IdRubro = ComboBox1.SelectedValue
+
 
         Select Case operacion_
 
             Case "Agregar"
+                If ComboBox1.SelectedIndex = -1 Then Exit Sub
+
                 ArticulosList.InsertarArticulo(MiArticulo)
+
 
             Case "Eliminar"
                 ArticulosList.EliminarArticulo(MiArticulo)
@@ -77,9 +81,12 @@
 
     End Sub
 
-    Private Sub RubroForm_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub ArticuloForm_Load(sender As Object, e As EventArgs) Handles Me.Load
+        ComboBox1.DataSource = RubrosList.TraerRubros()
+        ComboBox1.DisplayMember = "Descripcion"
+        ComboBox1.ValueMember = "Id"
+        ComboBox1.SelectedValue = IdRubro_
 
-        TextBox2.Focus()
     End Sub
 
 End Class

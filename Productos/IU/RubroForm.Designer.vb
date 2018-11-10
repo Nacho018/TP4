@@ -24,8 +24,8 @@ Partial Class RubroForm
     Private Sub InitializeComponent()
         Me.Id = New System.Windows.Forms.Label()
         Me.Descripcion = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.IdTextBox1 = New System.Windows.Forms.TextBox()
+        Me.DescripcionTextBox2 = New System.Windows.Forms.TextBox()
         Me.Aceptar = New System.Windows.Forms.Button()
         Me.Cancelar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
@@ -48,20 +48,20 @@ Partial Class RubroForm
         Me.Descripcion.TabIndex = 1
         Me.Descripcion.Text = "Descripcion"
         '
-        'TextBox1
+        'IdTextBox1
         '
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(254, 46)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(95, 20)
-        Me.TextBox1.TabIndex = 2
+        Me.IdTextBox1.Enabled = False
+        Me.IdTextBox1.Location = New System.Drawing.Point(254, 46)
+        Me.IdTextBox1.Name = "IdTextBox1"
+        Me.IdTextBox1.Size = New System.Drawing.Size(95, 20)
+        Me.IdTextBox1.TabIndex = 2
         '
-        'TextBox2
+        'DescripcionTextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(254, 82)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(95, 20)
-        Me.TextBox2.TabIndex = 3
+        Me.DescripcionTextBox2.Location = New System.Drawing.Point(254, 82)
+        Me.DescripcionTextBox2.Name = "DescripcionTextBox2"
+        Me.DescripcionTextBox2.Size = New System.Drawing.Size(95, 20)
+        Me.DescripcionTextBox2.TabIndex = 3
         '
         'Aceptar
         '
@@ -88,8 +88,8 @@ Partial Class RubroForm
         Me.ClientSize = New System.Drawing.Size(507, 261)
         Me.Controls.Add(Me.Cancelar)
         Me.Controls.Add(Me.Aceptar)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.DescripcionTextBox2)
+        Me.Controls.Add(Me.IdTextBox1)
         Me.Controls.Add(Me.Descripcion)
         Me.Controls.Add(Me.Id)
         Me.MaximizeBox = False
@@ -104,8 +104,8 @@ Partial Class RubroForm
 
     Friend WithEvents Id As Label
     Friend WithEvents Descripcion As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents IdTextBox1 As TextBox
+    Friend WithEvents DescripcionTextBox2 As TextBox
     Friend WithEvents Aceptar As Button
     Friend WithEvents Cancelar As Button
 End Class
